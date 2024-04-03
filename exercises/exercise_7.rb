@@ -15,11 +15,11 @@ store_name = gets.chomp
 
 new_store = Store.new(name: store_name)
 
-if new_store.save
-  puts "Store created successfully!"
-else
-  puts "Failed to create store. Errors:"
-  new_store.errors.full_messages.each do |message|
-    puts message
+  if new_store.save
+    puts "Store created successfully!"
+  else
+    puts "Failed to create store. Errors:"
+    new_store.errors.full_messages.each do |message|
+      puts message
   end
 end
